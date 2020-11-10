@@ -28,6 +28,27 @@ namespace FormularioPRG.Controllers
             return View();
         }
 
+        public IActionResult Contacto(){
+            return View();
+        }
+            
+        [HttpPost]
+            public IActionResult Contacto(Producto contacto)
+        {
+            if (ModelState.IsValid) 
+            {
+                return RedirectToAction("Confirmacion");
+            }
+            
+            return View(contacto);
+        }
+
+        public IActionResult Confirmacion(){
+            return View();
+        }
+
+        
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
